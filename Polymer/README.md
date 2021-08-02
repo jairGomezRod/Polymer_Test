@@ -24,14 +24,6 @@ The PRPL pattern, in a nutshell:
 
 ### Quickstart
 
-We've recorded a Polycast to get you up and running with PSK2 fast!
-
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=HgJ0XCyBwzY&list=PLNYkxOF6rcIDdS7HWIC_BYRunV6MHs5xo&index=10">
-    <img src="https://img.youtube.com/vi/HgJ0XCyBwzY/0.jpg" alt="Polymer Starter Kit 2 video">
-  </a>
-</p>
-
 ### Setup
 
 ##### Prerequisites
@@ -45,11 +37,9 @@ Second, install [Bower](https://bower.io/) using [npm](https://www.npmjs.com)
 
     npm install -g bower
 
-##### Initialize project from template
-
-    mkdir my-app
-    cd my-app
-    polymer init polymer-2-starter-kit
+### Clone Polymer project
+    npm install
+    bower install
 
 ### Start the development server
 
