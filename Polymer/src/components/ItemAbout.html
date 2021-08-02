@@ -1,0 +1,46 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles.html">
+
+
+<dom-module id="itemabout-element">
+  <template>
+    <style include="shared-styles">
+        :host {
+          display: block;
+  
+          padding: 10px;
+          text-align: center;
+        }
+        .description{
+            text-align: justify;
+        }
+      </style>
+    
+        <img class="rounded-circle" src="[[image]]" alt="Generic placeholder image" width="140" height="140">
+        <h2>{{name}}</h2>
+        <p class="description">{{description}}</p>
+         
+  </template>
+
+  <script>
+    class ItemAboutElement extends Polymer.Element {
+      static get is() { return 'itemabout-element'; }
+
+      static get properties() {
+            return {
+                image: {
+                    type: String
+                },
+                description: {
+                    type: String
+                },
+                name: {
+                    type: String
+                },
+            }
+        }
+    }
+
+    window.customElements.define(ItemAboutElement.is, ItemAboutElement);
+  </script>
+</dom-module>

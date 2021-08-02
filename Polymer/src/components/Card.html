@@ -1,0 +1,46 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles.html">
+
+
+<dom-module id="card-element">
+  <template>
+    <style include="shared-styles">
+        :host {
+          display: block;
+  
+          padding: 10px;
+        }
+      </style>
+    <div class="card shadow-sm mb-4">
+      <img  class="bd-placeholder-img card-img-top" width="100%" height="225" src="[[image]]"/>
+      <div class="card-body p-2">
+          <p class="card-text">{{description}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+          
+          <small class="text-muted"><b>{{price}}</b> </small>
+          </div>
+      </div>
+  </div>
+  </template>
+
+  <script>
+    class CardElement extends Polymer.Element {
+      static get is() { return 'card-element'; }
+      static get properties() {
+        return {
+            image: {
+                type: String
+            },
+            description: {
+                type: String
+            },
+            price: {
+                type: String
+            },
+        }
+      }
+    }
+
+    window.customElements.define(CardElement.is, CardElement);
+  </script>
+</dom-module>

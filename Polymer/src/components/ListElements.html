@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles.html">
+
+<!--Custom components -->
+<link rel="import" href="./Card.html">
+
+
+<dom-module id="list-element">
+  <template>
+    <style include="shared-styles">
+        :host {
+          display: block;
+  
+          padding: 10px;
+        }
+      </style>
+    <div>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <template is="dom-repeat" items="{{properties}}">
+                <div class="col-md-4">
+                    <card-element price="{{item.price}}" description="{{item.description}}" image="{{item.image}}"></card-element>
+                  </div>
+            </template>
+          </div>
+        </div>
+      </div>
+  </template>
+
+  <script>
+    class ListElement extends Polymer.Element {
+      static get is() { return 'list-element'; }
+
+      
+      static get properties() {
+        return {
+          properties: {
+            value() {
+              return [
+                {price: 'Venta: $3,200,000.00 USD', description: 'Espectacular Residencia en Puerto Cancún\r\n\r\nEsta residencia de lujo de 605 m2 de construcción en un terreno de 600 m2 cuenta con 3 recamaras está hecha con un exclusivo diseño y muchos detalles. Se ofrece totalmente amueblada, lista para mudarse...', image:'https://agent.immosystem.com.mx/view/companies/135/properties/17303/img/17303-aire-S.jpg'},
+                {price: 'Venta: $2,350,000.00 USD', description: 'Me complace ofrecerte a la venta nuestro extraordinario departamento ubicado en el mejor cuadrante de Polanco , en TENNYSON entre las emblemáticas Avenidas de Horacio y Homero ...', image:'https://agent.immosystem.com.mx/view/companies/135/properties/17301/img/17301-1-S.jpg'},
+                {price: 'Venta: $35,000,000.00 MXN', description: 'Dirección : Lomas de Chapultepec , Sierra Gorda 23 \r\nPrecio : 1.9 MILLONES DE DLS \r\nM2: 437.64\r\n4 cajones de estacionamiento \r\n1 Bodega \r\n\r\n- 4 Recamaras c/ Vestidor y Baño c/u \r\n- 1 Bodega \r\n- Cocina c/ Alacena \r\n- Cto. de Servicio \r\n- Cto. de lavado...', image:'https://agent.immosystem.com.mx/view/companies/135/properties/17827/img/17827-9-S.jpg'}
+              ];
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ListElement.is, ListElement);
+  </script>
+</dom-module>
